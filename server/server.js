@@ -53,9 +53,7 @@ app.get('/todos/:id', (req, res) => {
 });
 
 app.delete('/todos/:id', (req, res) => {
-  //get the id
   var {id} = req.params;
-  //validate the id -> not valid? return 404
   if (!ObjectID.isValid(id)) {
     res.status(404).send();
   }
@@ -67,12 +65,8 @@ app.delete('/todos/:id', (req, res) => {
   }).catch( (err) => {
     res.status(404).send();
   });
-    //success
-      //if no doc, send 404
-      //if doc, return doc with 200
-    //error
-      //400 with empty body
-})
+
+});
 
 
 module.exports = {app};
