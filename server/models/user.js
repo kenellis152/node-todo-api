@@ -62,7 +62,6 @@ UserSchema.statics.findByToken = function(token) {
       reject(); //could use use: return Promise.reject();
     })
   }
-
   return User.findOne({
     '_id': decoded._id,
     'tokens.token': token,
@@ -79,7 +78,6 @@ UserSchema.pre('save', function (next) {
         next();
       });
     });
-    user.password
   } else {
     next();
   }

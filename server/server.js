@@ -111,11 +111,12 @@ app.post('/users/', (req, res) => {
 
 
 app.get('/users/me', authenticate, (req, res) => {
-  var token = req.header('x-auth');
-
-  User.findByToken(token).then( (user) => {
-    res.send(req.user)
-  });
+  // var token = req.header('x-auth');
+  //
+  // User.findByToken(token).then( (user) => {
+  //   res.status(200).send(req.user)
+  // });
+  res.send(req.user);
 });
 
 module.exports = {app};
