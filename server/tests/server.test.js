@@ -192,7 +192,7 @@ describe('PATCH /todos/:id', () => {
   // duplicate above test
   // try to update first todo as second user
   // assert 404 response
-  it('should update the todo', (done) => {
+  it('should not update the todo created by other user', (done) => {
     var hexId = todos[0]._id.toHexString();
     var body = {text: "test123", completed: true}
     request(app)
